@@ -1,14 +1,11 @@
-import time
-
 from pages.demoqa import DemoQa
-from pages.elements_page import ElementPage
+from pages.elements_page import ElementsPage
 
+def test_ro_to_page_elements(browser):
+    demo_qa_page = DemoQa(browser)
+    elements_page = ElementsPage(browser)
 
-def test_go_to_page_elements(browser):
-    demoqa_page = DemoQa(browser)
-    element_page = ElementPage(browser)
-
-    demoqa_page.visit()
-    assert demoqa_page.equal_url()
-    demoqa_page.click_on_the_btn()
-    assert element_page.equal_url()
+    demo_qa_page.visit()
+    assert demo_qa_page.equal_url()
+    demo_qa_page.btn_elements.click()
+    assert elements_page.equal_url()

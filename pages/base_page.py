@@ -1,6 +1,4 @@
 from selenium.webdriver.common.by import By
-import pytest
-import time
 
 class BasePage:
 
@@ -11,8 +9,11 @@ class BasePage:
     def visit(self):
         return self.driver.get(self.base_url)
     
-    def find_element(self, locator):
-        return self.driver.find_element(locator)
-    
     def get_url(self):
         return self.driver.current_url
+
+    def equal_url(self):
+        if self.get_url() == self.base_url:
+            return True
+        else:
+            return False
