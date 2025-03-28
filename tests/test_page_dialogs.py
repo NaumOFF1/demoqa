@@ -1,4 +1,5 @@
 from pages.modal_dialogs_page import Modal_Dialog_Page
+from pages.form_page import Form_page
 from pages.demoqa import DemoQa
 
 def test_modal_dialogs(browser):
@@ -10,7 +11,6 @@ def test_modal_dialogs(browser):
 def test_navigation_modal(browser):
     modal_dialogs = Modal_Dialog_Page(browser)
     demoqa = DemoQa(browser)
-
     modal_dialogs.visit()
     modal_dialogs.refresh()
     modal_dialogs.btn_icon.click()
