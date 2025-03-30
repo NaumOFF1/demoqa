@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver import Keys
+from selenium.webdriver.support.select import Select
 
 class WebElement:
 
@@ -71,9 +72,21 @@ class WebElement:
         else:
             print('Locator type ' + self.locator_type) + 'not correct'
         return False
+    
+    def select_by_value(self, value):
+        select = Select(self.find_element())
+        select.select_by_value(value)
 
-    def select(self, name: str):
+    def select_input(self, name: str):
         self.find_element().send_keys(name)
         self.find_element().send_keys(Keys.ENTER)
 
+    def check_css(self, style, value = ''):
+        return self.find_element().value_off_css_property(style) == value
+    
+    def scroll_to_element(self):
+        self.driver.execute_script(
+            'window.scrollTo(0, document.body.scrollHeight);',
+            self.find_element()
+        )
     

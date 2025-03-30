@@ -29,5 +29,5 @@ def test_login_form(browser):
     form_page = Form_page(browser)
 
     form_page.visit()
-    form_page.selector_state.select('Uttar Pradesh')
-    form_page.selector_city.select('Merrut')
+    form_page.selector_state.select_input('Uttar Pradesh')
+    form_page.selector_city.select_input('Merrut')
