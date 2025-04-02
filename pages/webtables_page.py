@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 from components.components import WebElement
+import time
 
 class WebtablesPage(BasePage):
 
@@ -32,3 +33,11 @@ class WebtablesPage(BasePage):
         self.delete_record_2 = WebElement(driver, '#delete-record-2')
         self.padrow_odd = WebElement(driver, '//div[@class="rt-tr-group"]//div[@class="rt-tr -padRow -odd"]', 'xpath')
         self.padrow_even = WebElement(driver, '//div[@class="rt-tr-group"]//div[@class="rt-tr -padRow -even"]', 'xpath')
+        self.header_table_first_name = WebElement(driver, '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[1]', 'xpath')
+        self.header_table_last_name = WebElement(driver, '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[2]', 'xpath')
+        self.header_table_age = WebElement(driver, '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[3]', 'xpath')
+        self.header_table_email = WebElement(driver, '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[4]', 'xpath')
+        self.header_table_salary = WebElement(driver, '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[5]', 'xpath')
+        self.header_table_departament = WebElement(driver, '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div/div[6]', 'xpath')
+
+        self.header_table_locator = WebElement(driver, '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]/div', 'xpath')

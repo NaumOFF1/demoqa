@@ -1,4 +1,5 @@
-
+import logging
+import requests
 class BasePage:
 
     def __init__(self, driver, base_url):
@@ -28,3 +29,17 @@ class BasePage:
 
     def refresh(self):
         self.driver.refresh
+
+    def alert(self):
+        try:
+            return self.driver.switch_to.alert
+        except Exception as ex:
+            logging.log(1, ex)
+            return False
+        
+    def page_availability(self):
+        url = self.get_url()
+        if requests.head(url).status_code != 200:
+            return False
+        else:
+            return True

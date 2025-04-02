@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver import Keys
 from selenium.webdriver.support.select import Select
+import time
 
 class WebElement:
 
@@ -90,3 +91,6 @@ class WebElement:
             self.find_element()
         )
     
+    def alert(self):
+        self.find_element().alert()
+
